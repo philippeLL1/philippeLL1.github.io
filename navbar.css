@@ -1,0 +1,99 @@
+/* INIT */
+* {
+    padding: 0;
+    margin: 0;
+  }
+  
+:root {
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    --text-primary: #b6b6b6;
+    --text-secondary: #ececec;
+    --bg-primary: #7681B3;
+    --bg-secondary: #141418;
+    --transition-speed: 600ms;
+}
+
+/* navbar */
+
+.navbar {
+    width: 5rem;
+    height: 100vh;
+    position: fixed;
+    background-color: var(--bg-primary);
+    z-index: 2;
+    transition: 500ms ease-in-out;
+  }
+  
+  .navbar-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .menu-link {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+  }
+  
+  .item {
+    padding-top: 10vh;
+  }
+  
+  .item:first-child {
+    padding-top: 30vh;
+  }
+  
+  .item:last-child {
+    padding-top: 0vh;
+    margin-top: auto;
+    font-size: 3vw;
+    color:rgb(255, 255, 255);
+    padding-bottom: 1vw;
+    
+  }
+  
+  #Capa_1 {
+    transform: rotate(90deg);
+    transition: transform 800ms ease-in-out;
+    
+  }
+  
+  .link-text {
+    opacity: 0%;
+    transition: opacity 150ms linear 200ms;
+  }
+  
+  .navbar:hover {
+    width: 16rem;
+  }
+  
+  .navbar:hover .link-text {
+    opacity: 100%;
+  }
+  
+  .navbar:hover #Capa_1 {
+    transform: rotate(360deg);
+  }
+
+/* Scrollbar */
+
+.container::-webkit-scrollbar {
+    width: 0.3rem;
+  }
+  
+  .container::-webkit-scrollbar-track {
+    background: #F1F9F8;
+  }
+  
+  .container::-webkit-scrollbar-thumb {
+    background: #161616;
+  }
+  
+  
+  

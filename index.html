@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Philippe Latour</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="navbar.css">
+</head>
+    <body>
+
+        <nav class="navbar">
+            <ul class="navbar-nav">
+                <li class="item">
+                    <a href="index.html" class="menu-link">
+                        <span class="link-text">Home</span>
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="pages/about.html" class="menu-link">
+                        <span class="link-text">About me</span>
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="synth.html" class="menu-link">
+                        <span class="link-text">Synth</span>
+                    </a>
+                </li>
+                <li class="item">
+                    <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                        width="24.75px" height="24.75px" viewBox="0 0 24.75 24.75" style="enable-background:new 0 0 24.75 24.75;" xml:space="preserve">
+                        <g>
+                            <path d="M0,3.875c0-1.104,0.896-2,2-2h20.75c1.104,0,2,0.896,2,2s-0.896,2-2,2H2C0.896,5.875,0,4.979,0,3.875z M22.75,10.375H2
+                                c-1.104,0-2,0.896-2,2c0,1.104,0.896,2,2,2h20.75c1.104,0,2-0.896,2-2C24.75,11.271,23.855,10.375,22.75,10.375z M22.75,18.875H2
+                                c-1.104,0-2,0.896-2,2s0.896,2,2,2h20.75c1.104,0,2-0.896,2-2S23.855,18.875,22.75,18.875z"/>
+                        </g>
+                    </svg>
+                </li>
+            </ul>
+        </nav>
+
+        <section>
+            <div class="container">
+                <div class="intro">
+                    <div class="greeting">
+                        <div class="hi"><h1>Hi!</h1></div>
+                        <div class="nice"><h2>I'm Phil, nice to meet you.</h2></div>
+                    </div>
+                </div>
+                <div class="projects">
+
+                    <div class="banner">
+                        <h1>Projects</h1>
+                    </div>
+
+                    <div class="projects-grid">
+                        <a href="pages/coming_soon.html">
+                            <div class="studio">
+                                <div class="frost">
+                                    <span><strong>Cornerstore</strong></span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="https://www.tiktok.com/@bart_cassette?lang=en">
+                            <div class="bart">
+                                <div class="frost">
+                                    <span><strong>bart_cassette</strong></span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="https://www.audiovizua.com">
+                            <div class="audioVizua">
+                                <div class="frost">
+                                <span><strong>audioVizua</strong></span>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a href="pages/coming_soon.html">
+                            <div class="potions">
+                                <div class="frost">
+                                    <span><strong>Potions+</strong></span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="contact">
+                    <h1>Contact me</h1>
+                    <div class="portrait_Philippe">Picture of Philippe Latour</div>
+                    <div class="inputs">
+                        <input id="email"  type="text" placeholder="Email">
+                        <input id="subject" type="text" placeholder="Object">
+
+                        <textarea id="content" name="email" rows="4" cols="50" placeholder="Content"></textarea>
+
+                        <button id="send"}>Send!</button>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    <script>
+        document.getElementById("send").addEventListener('click', sendFn)
+
+        function sendFn() {
+            let emailSubject = document.getElementById("subject").value
+            let emailBody = document.getElementById("content").value
+            window.open(`mailto:philippelouislatour@gmail.com?subject=${emailSubject}&body=${emailBody}`)
+        }
+    </script>
+    </body>
+</html>
