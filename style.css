@@ -241,7 +241,7 @@ a:active {
 }
 
 .portrait_Philippe {
-  background-image: url(images/portrait_Philippe.jpg);
+  background-image: url(./portrait_Philippe.jpg);
   text-indent: -9999999rem;
   background-size: 100%;
   height: 56vh;
