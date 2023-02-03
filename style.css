@@ -155,24 +155,24 @@ body {
 }
 
 .studio {
-  background-image: url("./images/in_the_studio.jpg");
+  background-image: url("./in_the_studio.jpg");
   background-size: 100% 100%;
   
 }
 
 
 .bart {
-  background-image: url("./images/bart_cassette.png");
+  background-image: url("./bart_cassette.png");
   background-size: 100% 100%;
 }
 
 .audioVizua {
-  background-image: url("./images/audioVizuaForest.png");
+  background-image: url("./audioVizuaForest.png");
   background-size: 100% 100%;
 }
 
 .potions {
-  background-image: url("./images/potions.webp");
+  background-image: url("./potions.webp");
   background-size: 100% 100%;
 }
 
