@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2023-03-30 Thu 02:51 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Chapter 5 - Notes</title>
+<meta name="author" content="Philippe Latour" />
+<meta name="generator" content="Org Mode" />
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/css/readtheorg.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/javascript" src="https://fniessen.github.io/org-html-themes/src/readtheorg_theme/js/readtheorg.js"></script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Chapter 5 - Notes</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orgac7f899">1. The <i>Principle of Locality</i></a>
+<ul>
+<li><a href="#orgd395895">1.1. Two Types of Locality</a></li>
+</ul>
+</li>
+<li><a href="#org971a52f">2. Memory Hierarchy</a>
+<ul>
+<li><a href="#org1551f42">2.1. Terminology</a></li>
+</ul>
+</li>
+<li><a href="#orge5fc8c4">3. Memory Technologies</a>
+<ul>
+<li><a href="#org7782572">3.1. SRAM (static RAM)</a></li>
+<li><a href="#orgf35a1e5">3.2. DRAM (dynamic RAM)</a>
+<ul>
+<li><a href="#orge4b3755">3.2.1. Refreshing Cells</a></li>
+<li><a href="#org25de621">3.2.2. DRAM Banks</a></li>
+<li><a href="#orgb50801e">3.2.3. DRAM Buffers</a></li>
+<li><a href="#org2d123b5">3.2.4. SDRAM (synchronous DRAM)</a></li>
+<li><a href="#orgdf25580">3.2.5. DIMMs (dual inline memory modules)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgac7f899" class="outline-2">
+<h2 id="orgac7f899"><span class="section-number-2">1.</span> The <i>Principle of Locality</i></h2>
+<div class="outline-text-2" id="text-1">
+<p>
+The principle of locality states that programs access a relatively small portion of their address space at any instant of time.
+</p>
+</div>
+<div id="outline-container-orgd395895" class="outline-3">
+<h3 id="orgd395895"><span class="section-number-3">1.1.</span> Two Types of Locality</h3>
+<div class="outline-text-3" id="text-1-1">
+<dl class="org-dl">
+<dt>Temporal locality</dt><dd>If an item is referenced, it will tend to be referenced again soon.</dd>
+<dt>Spatial locality</dt><dd>If an item is referenced, items whose addresses are close will tend to be referenced soon.</dd>
+</dl>
+</div>
+</div>
+</div>
+<div id="outline-container-org971a52f" class="outline-2">
+<h2 id="org971a52f"><span class="section-number-2">2.</span> Memory Hierarchy</h2>
+<div class="outline-text-2" id="text-2">
+<ul class="org-ul">
+<li>A memory hierarchy consists of multiple levels of memory with different speeds and sizes. The faster memories are more expensive per bit than the slower memories and thus are smaller.</li>
+<li>It can consist of multiple levels, but data is copied between only two adjacent levels at a time.</li>
+</ul>
+</div>
+<div id="outline-container-org1551f42" class="outline-3">
+<h3 id="org1551f42"><span class="section-number-3">2.1.</span> Terminology</h3>
+<div class="outline-text-3" id="text-2-1">
+<dl class="org-dl">
+<dt>Block (or Line)</dt><dd>The minimum unit of information</dd>
+<dt>Hit</dt><dd>The data requested by the processor appears in some block in the upper level</dd>
+<dt>Miss</dt><dd>The data requested by the processor <i>does not</i> appear in in the upper level</dd>
+<dt>Hit rate (or hit ratio)</dt><dd>The fraction of memory accesses found in the upper level</dd>
+<dt>Miss rate (or miss ratio)</dt><dd>1 - (hit rate)</dd>
+<dt>Hit time</dt><dd>The time to access the upper level of the memory hierarchy. Includes the time needed to determine whether the access is a hit or a miss</dd>
+<dt>Miss penalty</dt><dd>The time to replace a block in the upper level with the corresponding block from the lower level + The time to deliver this block to the processor</dd>
+</dl>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orge5fc8c4" class="outline-2">
+<h2 id="orge5fc8c4"><span class="section-number-2">3.</span> Memory Technologies</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+There are four main memory technologies:
+</p>
+<ol class="org-ol">
+<li>DRAM - implements main memory</li>
+<li>SRAM - implements cache (closer to CPU)</li>
+<li>Flash - implement secondary memory</li>
+<li>Magnetic Disk - implements file and program storage</li>
+</ol>
+</div>
+<div id="outline-container-org7782572" class="outline-3">
+<h3 id="org7782572"><span class="section-number-3">3.1.</span> SRAM (static RAM)</h3>
+<div class="outline-text-3" id="text-3-1">
+<ul class="org-ul">
+<li>Memory arrays with (usually) a single access port</li>
+<li>The access port provides either a read or a write</li>
+<li>Fixed access time to any datum</li>
+<li>SRAMs don&rsquo;t need to refresh</li>
+<li>Access time is very close to the cycle time</li>
+<li>Typically uses 6-8 transistors per bit, prevents the information from being disturbed when read</li>
+<li>Needs only minimal power to retain the charge in standby mode</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgf35a1e5" class="outline-3">
+<h3 id="orgf35a1e5"><span class="section-number-3">3.2.</span> DRAM (dynamic RAM)</h3>
+<div class="outline-text-3" id="text-3-2">
+<ul class="org-ul">
+<li>Each cell stores its value as a <b>charge</b> in a capacitor</li>
+<li>A single transistor is used to access the stored charge</li>
+<li>Much cheaper than SRAM</li>
+<li>The charge cannot be kept indefinitely, so DRAM must refresh its cells</li>
+</ul>
+</div>
+<div id="outline-container-orge4b3755" class="outline-4">
+<h4 id="orge4b3755"><span class="section-number-4">3.2.1.</span> Refreshing Cells</h4>
+<div class="outline-text-4" id="text-3-2-1">
+<ul class="org-ul">
+<li>Reading a cell&rsquo;s content, then writing it back refreshes it</li>
+<li>The charge can be kept for several milliseconds</li>
+<li>We can refresh an entire <i>row</i> at once, which is equivalent to a <b>word</b> of data</li>
+<li>No need to refresh each bit/capacitor in the DRAM</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org25de621" class="outline-4">
+<h4 id="org25de621"><span class="section-number-4">3.2.2.</span> DRAM Banks</h4>
+<div class="outline-text-4" id="text-3-2-2">
+<ul class="org-ul">
+<li>DRAM is organized in banks, each with its own <i>buffer</i></li>
+<li>Sending an address to multiple banks allows them to read/write simultaneously</li>
+<li>Each access rotates the banks, which can compensate for the time it takes to refresh
+<ul class="org-ul">
+<li>One bank performs the operation while the others are refreshed</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgb50801e" class="outline-4">
+<h4 id="orgb50801e"><span class="section-number-4">3.2.3.</span> DRAM Buffers</h4>
+<div class="outline-text-4" id="text-3-2-3">
+<ul class="org-ul">
+<li>When a <code>PRE</code> (precharge) command is sent to the DRAM, it open or closes a <i>bank</i>
+<ul class="org-ul">
+<li>There are four banks in DDR3</li>
+</ul></li>
+<li>An <code>ACT</code> (activate) command is then sent, which specifies a <i>row</i> to load into the <i>buffer</i></li>
+<li>This <i>buffer</i> acts as <b>SRAM</b>, so each <code>bit</code> of the chosen <i>row</i> can be accessed randomly
+<ul class="org-ul">
+<li>This is useful for repeatedly accessing the values of a <code>word</code></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org2d123b5" class="outline-4">
+<h4 id="org2d123b5"><span class="section-number-4">3.2.4.</span> SDRAM (synchronous DRAM)</h4>
+<div class="outline-text-4" id="text-3-2-4">
+<ul class="org-ul">
+<li>Using a clock with a <code>DRAM</code> module allows it to sync to the CPU&rsquo;s clock rate, so there is no time wasted on synchronizing the two</li>
+<li><i>Double Data Rate</i> <code>SDRAM</code> performs a data transfer on the rising <b>and</b> falling edge of the clock
+<ul class="org-ul">
+<li>This results in doubled speeds</li>
+<li>For example, DDR4-3200 DRAM has a 1600Mhz clock, but it can perform 3200 million transfers per second!</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgdf25580" class="outline-4">
+<h4 id="orgdf25580"><span class="section-number-4">3.2.5.</span> DIMMs (dual inline memory modules)</h4>
+<div class="outline-text-4" id="text-3-2-5">
+<ul class="org-ul">
+<li>Memory for servers is typically organized on small boards of 4-16 <code>DRAMs</code></li>
+<li>Normally organized to be 8 bytes wide</li>
+<li id="<code>PC25600</code>">A type of <code>DIMM</code> which has four <code>DDR4-3200 SDRAMs</code>, allowing for transfer speeds of 25600 megabytes per second</li>
+<li id="Memory Rank">subset of chips in a <code>DIMM</code> that share <span class="underline">common address lines</span>.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Philippe Latour</p>
+<p class="date">Created: 2023-03-30 Thu 02:51</p>
+</div>
+</body>
+</html>
