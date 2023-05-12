@@ -6,10 +6,10 @@
 :root {
     font-size: 16px;
     font-family: 'Roboto', sans-serif;
-    --text-primary: #b6b6b6;
-    --text-secondary: #ececec;
-    --bg-primary: #7681B3;
-    --bg-secondary: #141418;
+    --text-primary: #DBDBDB;
+    --text-secondary: #D1D1D1;
+    --bg-primary: #282828;
+    --bg-secondary: #1E1E1E;
     --transition-speed: 600ms;
   }
 
@@ -38,7 +38,8 @@ body {
 
 .intro {
     position: relative;
-    background-color: #384E77;
+    background-color: #85C7F2;
+    color: #3C3C3C;
     padding: 0px;
     margin: 0px;
 }
@@ -47,11 +48,12 @@ body {
   display: inline-block;
   margin-top: 30vh;
   margin-left: 20vw;
-  color: rgb(255, 255, 255);
+  color: #3C3C3C;
 }
 
 .hi {
   font-size: 4vw;
+  color: #3C3C3C;
   transform-origin: 4.5vw;
   animation: grow-hi 1s cubic-bezier(.83,.76,.53,1.14) forwards, jiggle 1s ease-in-out 3s forwards;
 }
@@ -110,8 +112,8 @@ body {
 }
 
 .banner {
-  background-color: #51B1CA;;
-  color: white;
+  background-color: #C19875;;
+  color: #262626;
   width: 100%;
   display: flex;
   align-items: center;
